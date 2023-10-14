@@ -1,0 +1,17 @@
+{
+  "loading": "Loading",
+  "noConnection": "No Internet conection",
+  "timeOut": "Problems connecting to the server",
+  "noData": "No Data",
+  "unauthorised": "No authorization for application",
+  "completeField" : "Please fill in the current address fields before adding a new one",
+  "deleteNoAllow" : "Cannot delete this field",
+  "noSaveLocalData" : "Failed to save the information, please try again later",
+  "timeOutLocal" : "Problems connecting to internal database, please try again later",
+  "mandatoryField": "Mandatory field",
+  "noLaunch": "Could not launch",
+  "successfulRegistration": "Successful registration",
+  "name": "Name",
+  "register": "Register",
+  "address": "Address"
+}
