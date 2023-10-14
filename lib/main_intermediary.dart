@@ -6,7 +6,7 @@ import 'package:http/http.dart';
 import '/core/presentation/app.dart';
 import '/core/di/dependency_injection.dart';
 import '/core/shared/config/api_config.dart';
-import 'core/shared/config/environment_config.dart';
+import '/core/shared/config/environment_config.dart';
 import '/core/shared/config/connectivity_checker.dart';
 
 void mainIntermediary(
