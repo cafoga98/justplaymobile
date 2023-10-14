@@ -3,10 +3,10 @@ import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '/core/shared/auto_route/router.dart';
 
 import '/generated/l10n.dart';
 import '/core/shared/config/api_config.dart';
-import '/core/shared/auto_route/router.dart';
 import '/core/shared/config/environment_config.dart';
 import '/core/data/repository/implementation/local_storage_repository.dart';
 
@@ -47,45 +47,30 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 create: (context) => widget.environmentConfig,
               )
             ],
-            child: MultiBlocProvider(
-              providers: [
-                /*BlocProvider(
-                  create: (context) => SaveBloc(
-                    localStorageRepository: context.read<LocalStorageRepository>(),
-                  ),
-                ),
-                BlocProvider(
-                  create: (context) => DrawerBloc(
-                    localStorageRepository: context.read<LocalStorageRepository>(),
-                  ),
-                ),*/
+            child: MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              routeInformationParser: widget.getIt<AppRouter>().defaultRouteParser(),
+              routerDelegate: widget.getIt<AppRouter>().delegate(),
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
               ],
-              child: MaterialApp.router(
-                debugShowCheckedModeBanner: false,
-                routeInformationParser:
-                widget.getIt<AppRouter>().defaultRouteParser(),
-                routerDelegate: widget.getIt<AppRouter>().delegate(),
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                ],
-                supportedLocales: S.delegate.supportedLocales,
-                builder: (context, child) {
-                  return Builder(
-                    builder: (context) {
-                      final mediaQuery = MediaQuery.of(context);
-                      return MediaQuery(
-                        data: mediaQuery.copyWith(
-                          accessibleNavigation: false,
-                        ),
-                        child: child!,
-                      );
-                    },
-                  );
-                },
-              ),
+              supportedLocales: S.delegate.supportedLocales,
+              builder: (context, child) {
+                return Builder(
+                  builder: (context) {
+                    final mediaQuery = MediaQuery.of(context);
+                    return MediaQuery(
+                      data: mediaQuery.copyWith(
+                        accessibleNavigation: false,
+                      ),
+                      child: child!,
+                    );
+                  },
+                );
+              },
             ),
           ),
     );
