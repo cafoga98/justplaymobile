@@ -27,7 +27,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please fill in the current address fields before adding a new one"),
         "deleteNoAllow":
             MessageLookupByLibrary.simpleMessage("Cannot delete this field"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot Password ?"),
         "loading": MessageLookupByLibrary.simpleMessage("Loading"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
         "mandatoryField":
             MessageLookupByLibrary.simpleMessage("Mandatory field"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -37,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "noLaunch": MessageLookupByLibrary.simpleMessage("Could not launch"),
         "noSaveLocalData": MessageLookupByLibrary.simpleMessage(
             "Failed to save the information, please try again later"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "singUp": MessageLookupByLibrary.simpleMessage("Sing Up With"),
         "successfulRegistration":
             MessageLookupByLibrary.simpleMessage("Successful registration"),
         "timeOut": MessageLookupByLibrary.simpleMessage(

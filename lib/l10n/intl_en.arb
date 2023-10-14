@@ -13,5 +13,10 @@
   "successfulRegistration": "Successful registration",
   "name": "Name",
   "register": "Register",
-  "address": "Address"
+  "address": "Address",
+  "singUp": "Sing Up With",
+  "forgotPassword": "Forgot Password ?",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password"
 }
