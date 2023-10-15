@@ -60,3 +60,82 @@ With these four main views, you can effortlessly navigate through the app and ma
 ## Documentation
 * [Prototype design](https://github.com/cafoga98/justplaymobile/blob/main/documentation/WireGen%20-%20AI%20GPT%20wireframe%20generation%20(Community).pdf)
 * [Documentation](https://github.com/cafoga98/justplaymobile/blob/main/README.md)
+
+## ApiRest Services
+For service consumption, [https://app.wiremock.cloud/](https://app.wiremock.cloud/) was used as a provider to create the mock services.
+
+**Uri Base**
+- `https://65z9r.wiremockapi.cloud/availableGames`
+
+There were 2 consumptions of services:
+
+1. `/avaliableGames`
+   * Method:GET
+   * Description: Retrieves information about available games.
+
+    **Request Parameters**:
+   * None required for this request.
+
+   **Successful Response (Status Code 200)**:
+   * Description: Returns information about games available for today and tomorrow.
+   
+   **Response Structure**:
+
+   * Today (Array of objects): Contains information about games available for today.
+
+     * genrGame (string): Game genre (skate, scooter, soccer, cycling, basketball).
+
+     * time (string): Game time.
+
+     * shortDescription (string): A brief game description.
+
+     * carousel (Array of strings): URLs of images related to the game.
+
+     * host (Object): Information about the game host.
+
+     * name (string): The host's name.
+
+     * profileImage (string): URL of the host's profile image.
+
+     * eventTitle (string): The event or game title.
+
+     * address (string): Game location address.
+
+     * duration (string): Game duration.
+
+     * price (string): Game price.
+
+     * description (string): Detailed game description.
+
+     * amenities (Array of strings): List of available amenities.
+
+     * players (Array of objects): List of players.
+
+     * name (string): Player's name.
+
+     * profileImage (string): URL of the player's profile image.
+
+     * maxPlayers (string): The maximum number of players allowed in the game.
+
+     * recommendations (Array of strings): Recommendations related to the game.
+
+     * Tomorrow (Array of objects): Similar to "Today," but contains information about games available for tomorrow.
+
+
+2. `/loginFake`
+   * Method: Post
+   * Description: Allows you to log in.
+
+   **Request Parameters**:
+   * String userName.
+   * String password.
+
+   **Successful Response (Status Code 200)**:
+   * Description: Returns message like "Login Exitoso".
+
+   **Request Structure**:
+    ```json
+    {
+    "userName": "camilo",
+    "password": "camilo"
+    }```
