@@ -32,6 +32,9 @@ InputDecoration inputTextFormField = InputDecoration(
   isDense: true,
   filled: true,
   fillColor: Colors.white,
+  errorBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(20.0),
+  ),
   focusedBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(20.0),
   ),
