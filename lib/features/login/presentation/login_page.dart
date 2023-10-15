@@ -13,6 +13,11 @@ import '/features/login/domain/bloc/login_bloc/login_bloc.dart';
 import '/features/login/presentation/widgets/footer_login.dart';
 
 @RoutePage()
+///The [LoginPage] class is a stateful widget because it needs to manage the state of the login form.
+///The [LoginPage] widget uses a [BlocListener] widget to listen for changes to the state of the [LoginBloc].
+///When the [LoginState] is error, the [LoginPage] widget shows an error message to the user.
+///When the [LoginState] is loading, the [LoginPage] widget shows a loading dialog to the user.
+///And when the [LoginState] is done, the [LoginPage] widget navigates to the next page.
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -20,6 +25,7 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
+///The [_LoginPageState] class is responsible for building the login form and handling user input.
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {

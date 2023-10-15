@@ -6,6 +6,16 @@ import '/core/shared/error_handle/exceptions.dart';
 import '/features/login/data/services/implementation/login_service.dart';
 import '/features/login/data/repositories/interfaces/login_repository_interface.dart';
 
+/// LoginRepository Class
+///
+/// Implements the [LoginRepositoryInterfaces] interface to handle login-related
+/// data operations. It communicates with the [LoginService] to perform login actions.
+///
+/// Example usage:
+///
+/// ```dart
+/// final repository = LoginRepository(loginService: LoginService());
+/// ```
 class LoginRepository extends LoginRepositoryInterfaces {
   final LoginService loginService;
 

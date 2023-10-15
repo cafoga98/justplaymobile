@@ -8,6 +8,10 @@ import '/core/shared/utils/colors_repository.dart';
 import '/core/presentation/widgets/custom_button.dart';
 import '/features/login/domain/bloc/login_bloc/login_bloc.dart';
 
+///The FormLogin widget uses the context.read<LoginBloc>() method to access the
+///[LoginBloc] instance. When the user submits the form, the FormLogin widget adds
+/// a LoginEvent.started() event to the LoginBloc. The [LoginBloc] will then
+/// handle the event and try to login the user.
 class FormLogin extends StatefulWidget {
   const FormLogin({Key? key}) : super(key: key);
 
@@ -86,9 +90,16 @@ class _FormLoginState extends State<FormLogin> {
                 ],
               ),
             ),
+            ///When the user submits the form, the Form widget will call the onPressed
+            ///callback function for the submit button. The onPressed callback function
+            ///can then submit the form data to the server or perform other actions.
             CustomButton(
               title: S.current.login,
               onPressed: () {
+                ///The Form widget validates the input by calling the validator callback
+                /// function for each form field. If the validator callback function
+                /// returns an error message, the Form widget will mark the form field
+                /// as invalid.
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                   context.read<LoginBloc>().add(
