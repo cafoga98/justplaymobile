@@ -12,6 +12,9 @@ class SportsService extends SportsServiceInterface {
       this.environmentConfig,
       );
 
+  /// Fetches the available sports from the server.
+  ///
+  /// Returns a list of [AvaliableDays].
   @override
   Future<List<AvaliableDays>?> fetchAvaliableSports() async {
     var data = await apiConfig.apiGet(
@@ -22,7 +25,6 @@ class SportsService extends SportsServiceInterface {
     List newList = newMap["avaliableDays"] as List;
     final response = newList.map((e) => AvaliableDays.fromJson(e)).toList();
 
-    //final response = ((data as Map<String, dynamic>)["avaliableDays"] as List).map((e) => AvaliableDays.fromJson(e)).toList();
     return response;
   }
 }

@@ -19,6 +19,26 @@ class SportsBloc extends Bloc<SportsEvent, SportsState> {
     on<SportsEvent>(_fetchAvalibleSports);
   }
 
+  /// _fetchAvalibleSports Function
+  ///
+  /// This private function is responsible for fetching available sports data in response to
+  /// a [SportsEvent]. It emits state updates to a [SportsState] Emitter based on the
+  /// result of the operation.
+  ///
+  /// - If the operation is successful, it emits a [SportsState.done] state with available sports data.
+  /// - If an error occurs during the operation, it emits a [SportsState.error] state with the corresponding error.
+  ///
+  /// Parameters:
+  /// - [event]: A [SportsEvent] that triggers the operation.
+  /// - [emit]: An Emitter for emitting state updates.
+  ///
+  /// Example usage:
+  ///
+  /// ```dart
+  /// _fetchAvalibleSports(SportsEvent event, Emitter<SportsState> emit) async {
+  ///   // Implementation of the function.
+  /// }
+  /// ```
   _fetchAvalibleSports(SportsEvent event, Emitter<SportsState> emit) async {
     emit(const SportsState.loading());
     final response = await sportsRepository.getAvalibleSports();

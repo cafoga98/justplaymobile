@@ -14,6 +14,9 @@ class SportsRepository extends SportsRepositoryInterfaces {
     required this.sportsService,
   });
 
+  /// Fetches the available sports from the server.
+  ///
+  /// Returns a [Either] of [Failure] or a list of [AvaliableDays].
   @override
   Future<Either<Failure, List<AvaliableDays>?>> getAvalibleSports() async {
     try {
