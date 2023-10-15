@@ -33,7 +33,7 @@ class CitiesSubPage extends StatelessWidget {
               return null;
             },
             error: (e) {
-
+              context.router.popForced();
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(e.message ?? S.current.noData),
