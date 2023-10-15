@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/generated/l10n.dart';
+import '/core/shared/auto_route/router.dart';
 import '/core/shared/utils/style_repository.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/features/sports/domain/entities/host.dart';
@@ -18,8 +19,20 @@ class SportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsRepository.realBlue,
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.router.replaceAll([const LoginRoute()]);
+            },
+            icon: const Icon(
+              Icons.logout_outlined,
+            ),
+          ),
+        ],
+      ),
       body: Padding(
-        padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 40.h),
+        padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 20.h),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
@@ -121,7 +134,7 @@ AvaliableSport avaliableSport1 = AvaliableSport(
     duration: "60 min",
     price: "4.99",
     description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets conta",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets conta",
     amenities: ["parking", "wifi", "food store", "Hydration"],
     players: [
       Host(
@@ -164,7 +177,7 @@ AvaliableSport avaliableSport3 = AvaliableSport(
     duration: "60 min",
     price: "4.99",
     description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets conta",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets conta",
     amenities: ["parking", "wifi", "food store", "Hydration"],
     players: [
       Host(
@@ -207,7 +220,7 @@ AvaliableSport avaliableSport4 = AvaliableSport(
     duration: "60 min",
     price: "4.99",
     description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets conta",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets conta",
     amenities: ["parking", "wifi", "food store", "Hydration"],
     players: [
       Host(
