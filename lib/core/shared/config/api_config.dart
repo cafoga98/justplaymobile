@@ -38,12 +38,41 @@ class ApiConfig {
     }
   }
 
-  _responseManager(Response response){
-    switch(response.statusCode){
+  Future<dynamic> apiPost(
+    String uri, {
+    Object? body,
+    Map<String, String>? headers,
+  }) async {
+    try {
+      ///Valid internet connection
+      if (await connectivityChecker.checkingConnection() == false) {
+        throw NoConnectionException(S.current.noConnection);
+      }
+
+      final response = await client
+          .post(
+        Uri.parse(uri),
+        body: body,
+        headers: headers,
+      )
+          .timeout(
+        const Duration(seconds: 60),
+        onTimeout: () {
+          throw TimeOutException(S.current.timeOut);
+        },
+      );
+      return _responseManager(response);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  _responseManager(Response response) {
+    switch (response.statusCode) {
       case 200:
-        if(response.body.toString().isNotEmpty){
+        if (response.body.toString().isNotEmpty) {
           return json.decode(response.body);
-        }else{
+        } else {
           throw NoDataException(S.current.noData);
         }
       case 201:
