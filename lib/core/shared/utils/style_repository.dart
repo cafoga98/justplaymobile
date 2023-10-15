@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '/core/shared/utils/colors_repository.dart';
+
 final extraLarge = TextStyle(
   fontFamily: 'Caveat',
   fontWeight: FontWeight.bold,
@@ -24,7 +26,7 @@ final medium = TextStyle(
 final small = TextStyle(
   fontFamily: 'Caveat',
   fontSize: 16.sp,
-  color: Colors.black,
+  color: ColorsRepository.realBlue,
 );
 
 InputDecoration inputTextFormField = InputDecoration(
