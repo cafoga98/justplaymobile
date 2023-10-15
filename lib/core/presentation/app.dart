@@ -3,13 +3,16 @@ import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '/core/shared/auto_route/router.dart';
 
 import '/generated/l10n.dart';
+import '/core/shared/auto_route/router.dart';
 import '/core/shared/config/api_config.dart';
+import '/core/shared/utils/colors_repository.dart';
 import '/core/shared/config/environment_config.dart';
+import '/features/login/domain/bloc/login_bloc/login_bloc.dart';
+import '/features/login/data/services/implementation/login_service.dart';
 import '/core/data/repository/implementation/local_storage_repository.dart';
-
+import '/features/login/data/repositories/implementation/login_repository.dart';
 
 class MyApp extends StatefulWidget {
   final GetIt getIt;
@@ -34,45 +37,67 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       splitScreenMode: true,
-      builder: (context, child) =>
-          MultiRepositoryProvider(
-            providers: [
-              RepositoryProvider<LocalStorageRepository>(
-                  create: (context) => widget.getIt<LocalStorageRepository>()
-              ),
-              RepositoryProvider<ApiConfig>(
-                create: (context) => widget.apiConfig,
-              ),
-              RepositoryProvider<EnvironmentConfig>(
-                create: (context) => widget.environmentConfig,
-              )
-            ],
-            child: MaterialApp.router(
-              debugShowCheckedModeBanner: false,
-              routeInformationParser: widget.getIt<AppRouter>().defaultRouteParser(),
-              routerDelegate: widget.getIt<AppRouter>().delegate(),
-              localizationsDelegates: const [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              builder: (context, child) {
-                return Builder(
-                  builder: (context) {
-                    final mediaQuery = MediaQuery.of(context);
-                    return MediaQuery(
-                      data: mediaQuery.copyWith(
-                        accessibleNavigation: false,
-                      ),
-                      child: child!,
-                    );
-                  },
-                );
-              },
-            ),
+      builder: (context, child) => MultiRepositoryProvider(
+        providers: [
+          RepositoryProvider<LocalStorageRepository>(
+              create: (context) => widget.getIt<LocalStorageRepository>()),
+          RepositoryProvider<ApiConfig>(
+            create: (context) => widget.apiConfig,
           ),
+          RepositoryProvider<EnvironmentConfig>(
+            create: (context) => widget.environmentConfig,
+          ),
+          RepositoryProvider<LoginRepository>(
+            create: (context) => LoginRepository(
+              loginService: LoginService(
+                context.read<ApiConfig>(),
+                context.read<EnvironmentConfig>(),
+              ),
+            ),
+          )
+        ],
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => LoginBloc(
+                loginRepository: context.read<LoginRepository>(),
+              ),
+            ),
+          ],
+          child: MaterialApp.router(
+            theme: ThemeData(
+              appBarTheme: const AppBarTheme(
+                elevation: 0,
+                color: ColorsRepository.realBlue,
+              ),
+            ),
+            debugShowCheckedModeBanner: false,
+            routeInformationParser:
+                widget.getIt<AppRouter>().defaultRouteParser(),
+            routerDelegate: widget.getIt<AppRouter>().delegate(),
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            builder: (context, child) {
+              return Builder(
+                builder: (context) {
+                  final mediaQuery = MediaQuery.of(context);
+                  return MediaQuery(
+                    data: mediaQuery.copyWith(
+                      accessibleNavigation: false,
+                    ),
+                    child: child!,
+                  );
+                },
+              );
+            },
+          ),
+        ),
+      ),
     );
   }
 
