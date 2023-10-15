@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '/generated/l10n.dart';
-import '/core/shared/utils/style_repository.dart';
-import '/core/shared/utils/colors_repository.dart';
 import '/features/sports/domain/entities/avaliable_sport.dart';
-import '/features/sports/presentation/widgets/players_item.dart';
-import '/features/sports/presentation/widgets/amenities_item.dart';
+import '/features/sports/presentation/widgets/players_section.dart';
+import '/features/sports/presentation/widgets/amenities_section.dart';
+import '/features/sports/presentation/widgets/information_section.dart';
+import '/features/sports/presentation/widgets/recommendations_section.dart';
 
 @RoutePage()
 class DetailPage extends StatefulWidget {
@@ -76,181 +75,23 @@ class _DetailPageState extends State<DetailPage> {
             ),
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  //region Info
-                  Text(
-                    widget.avaliableSport.eventTitle ?? S.current.noData,
-                    style: large.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  InformationSection(
+                    eventTitle: widget.avaliableSport.eventTitle,
+                    address: widget.avaliableSport.address,
+                    price: widget.avaliableSport.price,
+                    description: widget.avaliableSport.description,
+                    duration: widget.avaliableSport.duration,
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 15.h, right: 10.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.location_on_rounded,
-                                  color: ColorsRepository.coralRed,
-                                  size: 16.h,
-                                ),
-                                SizedBox(
-                                  width: 15.w,
-                                ),
-                                Text(
-                                  widget.avaliableSport.address ??
-                                      S.current.noData,
-                                  style: medium.copyWith(
-                                    fontWeight: FontWeight.normal,
-                                    decoration: TextDecoration.underline,
-                                    color: Colors.blue,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 5.h,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.access_time_filled_rounded,
-                                  color: ColorsRepository.realBlue,
-                                  size: 16.h,
-                                ),
-                                SizedBox(
-                                  width: 15.w,
-                                ),
-                                Text(
-                                  widget.avaliableSport.duration ??
-                                      S.current.noData,
-                                  style: medium.copyWith(
-                                    fontWeight: FontWeight.normal,
-                                    color: ColorsRepository.realBlue,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        Text(
-                          '\$ ${widget.avaliableSport.price ?? S.current.noData}',
-                          style: medium.copyWith(
-                              color: ColorsRepository.realBlue,
-                              fontSize: 20.sp),
-                        )
-                      ],
-                    ),
+                  AmenitiesSection(
+                    amenities: widget.avaliableSport.amenities,
                   ),
-                  SizedBox(
-                    height: 20.h,
+                  PlayersSection(
+                    players: widget.avaliableSport.players,
                   ),
-                  //endregion
-                  //region Description
-                  Text(
-                    'Description',
-                    style: large.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  RecommendationSection(
+                    recommendations: widget.avaliableSport.recommendations,
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Text(
-                    widget.avaliableSport.description ?? S.current.noData,
-                    textAlign: TextAlign.justify,
-                    style: medium.copyWith(
-                      fontWeight: FontWeight.normal,
-                      height: 1.1,
-                      color: ColorsRepository.realBlue,
-                    ),
-                  ),
-                  //endregion
-                  //region Amenities
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  Text(
-                    'Amenities',
-                    style: large.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  SizedBox(
-                    height: 55.h,
-                    width: MediaQuery.of(context).size.width,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: widget.avaliableSport.amenities!.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return AmenitiesItem(
-                          amenity: widget.avaliableSport.amenities![index],
-                        );
-                      },
-                    ),
-                  ),
-                  //endregion
-                  //region Players
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  Text(
-                    'Who\'s Playing',
-                    style: large.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    primary: false,
-                    itemCount: widget.avaliableSport.amenities!.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return PlayersItem(
-                        player: widget.avaliableSport.players![index],
-                        index: index,
-                      );
-                    },
-                  ),
-                  //endregion
-                  //region Recommendations
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  Text(
-                    'Recommendations',
-                    style: large.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    primary: false,
-                    itemCount: widget.avaliableSport.recommendations!.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Text(
-                        '• ${widget.avaliableSport.recommendations?[index] ?? S.current.noData}',
-                        textAlign: TextAlign.justify,
-                        style: medium.copyWith(
-                          fontWeight: FontWeight.normal,
-                          color: ColorsRepository.realBlue,
-                        ),
-                      );
-                    },
-                  ),
-                  //endregion
                 ],
               ),
             ),

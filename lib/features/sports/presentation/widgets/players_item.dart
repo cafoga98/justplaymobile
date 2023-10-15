@@ -39,7 +39,7 @@ class PlayersItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
-          height: 55.h,
+          height: 50.h,
           width: MediaQuery.of(context).size.width / 2,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -60,8 +60,8 @@ class PlayersItem extends StatelessWidget {
           width: 20.w,
         ),
         Container(
-          height: 55.h,
-          width: 55.h,
+          height: 50.h,
+          width: 50.h,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             image: DecorationImage(
@@ -79,8 +79,8 @@ class PlayersItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 55.h,
-          width: 55.h,
+          height: 50.h,
+          width: 50.h,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             image: DecorationImage(
@@ -92,7 +92,7 @@ class PlayersItem extends StatelessWidget {
           width: 20.w,
         ),
         SizedBox(
-          height: 55.h,
+          height: 50.h,
           width: MediaQuery.of(context).size.width / 2,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
