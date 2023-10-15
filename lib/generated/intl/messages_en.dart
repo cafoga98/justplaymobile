@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password ?"),
         "loading": MessageLookupByLibrary.simpleMessage("Loading"),
+        "loadingInformation":
+            MessageLookupByLibrary.simpleMessage("Loading information"),
         "loadingLogin": MessageLookupByLibrary.simpleMessage(
             "Iniciando sesión, por favor espere un momento ..."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),

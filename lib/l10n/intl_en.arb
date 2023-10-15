@@ -30,5 +30,6 @@
   "loadingLogin": "Iniciando sesión, por favor espere un momento ...",
   "wrongCredentials": "Incorrect credentials",
   "city": "City",
-  "validateCity": "Please choose a valid city"
+  "validateCity": "Please choose a valid city",
+  "loadingInformation": "Loading information"
 }
