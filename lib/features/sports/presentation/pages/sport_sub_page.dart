@@ -90,7 +90,7 @@ class SportSubPage extends StatelessWidget {
                 BlocBuilder<SportsBloc, SportsState>(
                   builder: (context, state) => state.maybeWhen(
                     orElse: () {
-                      return const Center(child: Text("No hay data"));
+                      return Center(child: Text(S.current.noData));
                     },
                     done: (avaliableSports) {
                       if (avaliableSports != null ||
@@ -108,7 +108,7 @@ class SportSubPage extends StatelessWidget {
                           ),
                         );
                       } else {
-                        return const Center(child: Text("No hay data"));
+                        return Center(child: Text(S.current.noData));
                       }
                     },
                   ),

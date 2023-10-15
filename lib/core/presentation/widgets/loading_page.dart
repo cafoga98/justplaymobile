@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '/generated/l10n.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/core/shared/utils/style_repository.dart';
 
@@ -37,7 +38,7 @@ class LoadingPage extends StatelessWidget {
             height: 20.h,
           ),
           Text(
-            message ?? "Cargando información",
+            message ?? S.current.loadingInformation,
             textAlign: TextAlign.center,
             style: extraLarge.copyWith(shadows: [
               const BoxShadow(
