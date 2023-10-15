@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:country_state_city_picker/country_state_city_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/generated/l10n.dart';
@@ -8,6 +9,7 @@ import '/core/shared/auto_route/router.dart';
 import '/core/shared/utils/style_repository.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/core/presentation/widgets/custom_button.dart';
+import '/features/cities/domain/bloc/cities_bloc/cities_bloc.dart';
 
 class FormCities extends StatefulWidget {
   const FormCities({Key? key}) : super(key: key);
@@ -17,9 +19,9 @@ class FormCities extends StatefulWidget {
 }
 
 class _FormCitiesState extends State<FormCities> {
-  late String countryValue;
-  late String stateValue;
-  late String cityValue;
+  String countryValue = '';
+  String stateValue = '';
+  String cityValue = '';
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,9 @@ class _FormCitiesState extends State<FormCities> {
             colorTitle: Colors.white,
             backgroundColor: ColorsRepository.coralRed,
             onPressed: () {
-              context.router.push(const SportRoute());
+              context
+                  .read<CitiesBloc>()
+                  .add(CitiesEvent.started(city: cityValue));
             },
           )
         ],
