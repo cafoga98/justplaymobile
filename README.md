@@ -27,6 +27,8 @@ Welcome to our mobile application that brings you closer to your favorite sports
   - Username: camilo
   - Password: camilo
 
+![Login Screen](https://github.com/cafoga98/justplaymobile/blob/main/documentation/login_screen.jpg){:width="200px" height="150px"}
+
 - Cities Selection: After logging in, you'll land on the cities selection screen. Here, you need to choose your location using three dropdown menus:
 
   - Select your country
