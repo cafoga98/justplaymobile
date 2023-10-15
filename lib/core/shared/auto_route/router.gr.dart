@@ -26,9 +26,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     SportRoute.name: (routeData) {
+      final args = routeData.argsAs<SportRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SportPage(),
+        child: SportPage(
+          key: args.key,
+          city: args.city,
+        ),
       );
     },
     CitiesRoute.name: (routeData) {
@@ -85,16 +89,39 @@ class DetailRouteArgs {
 
 /// generated route for
 /// [SportPage]
-class SportRoute extends PageRouteInfo<void> {
-  const SportRoute({List<PageRouteInfo>? children})
-      : super(
+class SportRoute extends PageRouteInfo<SportRouteArgs> {
+  SportRoute({
+    Key? key,
+    required String city,
+    List<PageRouteInfo>? children,
+  }) : super(
           SportRoute.name,
+          args: SportRouteArgs(
+            key: key,
+            city: city,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'SportRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<SportRouteArgs> page = PageInfo<SportRouteArgs>(name);
+}
+
+class SportRouteArgs {
+  const SportRouteArgs({
+    this.key,
+    required this.city,
+  });
+
+  final Key? key;
+
+  final String city;
+
+  @override
+  String toString() {
+    return 'SportRouteArgs{key: $key, city: $city}';
+  }
 }
 
 /// generated route for
