@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password ?"),
         "loading": MessageLookupByLibrary.simpleMessage("Loading"),
+        "loadingLogin": MessageLookupByLibrary.simpleMessage(
+            "Iniciando sesión, por favor espere un momento ..."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "mandatoryField":
             MessageLookupByLibrary.simpleMessage("Mandatory field"),
@@ -62,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "unauthorised": MessageLookupByLibrary.simpleMessage(
             "No authorization for application"),
         "whosPlaying": MessageLookupByLibrary.simpleMessage("Who\\\'s Playing"),
+        "wrongCredentials":
+            MessageLookupByLibrary.simpleMessage("Incorrect credentials"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Your location")
       };
 }

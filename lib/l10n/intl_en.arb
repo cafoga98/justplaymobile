@@ -26,5 +26,7 @@
   "amenities": "Amenities",
   "description": "Description",
   "whosPlaying": "Who\\'s Playing",
-  "recommendation": "Recommendations"
+  "recommendation": "Recommendations",
+  "loadingLogin": "Iniciando sesión, por favor espere un momento ...",
+  "wrongCredentials": "Incorrect credentials"
 }

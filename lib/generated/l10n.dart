@@ -329,6 +329,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Iniciando sesión, por favor espere un momento ...`
+  String get loadingLogin {
+    return Intl.message(
+      'Iniciando sesión, por favor espere un momento ...',
+      name: 'loadingLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect credentials`
+  String get wrongCredentials {
+    return Intl.message(
+      'Incorrect credentials',
+      name: 'wrongCredentials',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
