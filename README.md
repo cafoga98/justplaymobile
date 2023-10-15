@@ -26,8 +26,10 @@ Welcome to our mobile application that brings you closer to your favorite sports
 
   - Username: camilo
   - Password: camilo
-
-  ![Login Screen](https://github.com/cafoga98/justplaymobile/blob/main/documentation/login_screen.jpg)
+  
+  <p float="left">
+  <img src="https://github.com/cafoga98/justplaymobile/blob/main/documentation/login_screen.jpg" width="200" />
+  </p>
 
 - **Cities Selection**: After logging in, you'll land on the cities selection screen. Here, you need to choose your location using three dropdown menus:
 
@@ -35,17 +37,20 @@ Welcome to our mobile application that brings you closer to your favorite sports
   - Choose your state or province
   - Pick your city
 
-  ![Cities Selection](https://github.com/cafoga98/justplaymobile/blob/main/documentation/cities_screen.jpg)
+  <p float="left">
+  <img src="https://github.com/cafoga98/justplaymobile/blob/main/documentation/cities_screen.jpg" width="200" />
+  </p>
 
 - **Events and Matches**: Once your location is set, you'll be directed to the main screen displaying a list of sports events and matches. Explore the various options available and find the ones that pique your interest. You can click on any event to get more details or join it.
-  ![Events and Matches](https://github.com/cafoga98/justplaymobile/blob/main/documentation/sports_screen.jpg)
+  <p float="left">
+  <img src="https://github.com/cafoga98/justplaymobile/blob/main/documentation/sports_screen.jpg" width="200" />
+  </p>
 
 - **Event Details**: When you click on an event or match, you'll be taken to a screen that provides you with all the information you need. This includes the event's date, time, location, description, and more. It's the perfect place to decide if you want to attend or join the event.
-  ![Events Details](https://github.com/cafoga98/justplaymobile/blob/main/documentation/details_screen.jpg)
-<p float="left">
+  <p float="left">
   <img src="https://github.com/cafoga98/justplaymobile/blob/main/documentation/details_screen.jpg" width="200" />
   <img src="https://github.com/cafoga98/justplaymobile/blob/main/documentation/detail_screen_bottom.jpg" width="200" /> 
-</p>
+  </p>
 With these four main views, you can effortlessly navigate through the app and make the most of your sports-related interests. Enjoy your sports-filled journey with our mobile application!
 
 ## Contributors
