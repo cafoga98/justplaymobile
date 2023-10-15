@@ -1,12 +1,12 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/generated/l10n.dart';
-import '/core/shared/auto_route/router.dart';
 import '/core/shared/utils/style_repository.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/core/presentation/widgets/custom_button.dart';
+import '/features/login/domain/bloc/login_bloc/login_bloc.dart';
 
 class FormLogin extends StatefulWidget {
   const FormLogin({Key? key}) : super(key: key);
@@ -17,6 +17,9 @@ class FormLogin extends StatefulWidget {
 
 class _FormLoginState extends State<FormLogin> {
   final _formKey = GlobalKey<FormState>();
+
+  String? username = '';
+  String? password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -39,19 +42,34 @@ class _FormLoginState extends State<FormLogin> {
               style: medium.copyWith(color: ColorsRepository.realBlue),
               decoration:
                   inputTextFormField.copyWith(hintText: S.current.email),
-              onSaved: (data) {},
-              onChanged: (data) {},
+              validator: (data) {
+                if (data == null || data!.isEmpty) {
+                  return S.current.mandatoryField;
+                }
+                return null;
+              },
+              onSaved: (data) {
+                username = data;
+              },
             ),
             SizedBox(
               height: 10.h,
             ),
             TextFormField(
               keyboardType: TextInputType.name,
+              obscureText: true,
               style: medium.copyWith(color: ColorsRepository.realBlue),
               decoration:
                   inputTextFormField.copyWith(hintText: S.current.password),
-              onSaved: (data) {},
-              onChanged: (data) {},
+              onSaved: (data) {
+                password = data;
+              },
+              validator: (data) {
+                if (data == null || data!.isEmpty) {
+                  return S.current.mandatoryField;
+                }
+                return null;
+              },
             ),
             Padding(
               padding: EdgeInsets.only(top: 10.h),
@@ -71,7 +89,15 @@ class _FormLoginState extends State<FormLogin> {
             CustomButton(
               title: S.current.login,
               onPressed: () {
-                context.router.push(const CitiesRoute());
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                  context.read<LoginBloc>().add(
+                        LoginEvent.started(
+                          userName: username!,
+                          password: password!,
+                        ),
+                      );
+                }
               },
             )
           ],
