@@ -14,7 +14,7 @@ class FooterLogin extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
-          height: 30.h,
+          height: 20.h,
         ),
         Text(
           S.current.singUp,
