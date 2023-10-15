@@ -2,11 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/core/shared/utils/style_repository.dart';
+import '/core/shared/utils/colors_repository.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
+  final Color? backgroundColor;
+  final Color? colorTitle;
+  final VoidCallback? onPressed;
 
-  const CustomButton({Key? key, required this.title}) : super(key: key);
+  const CustomButton({
+    Key? key,
+    required this.title,
+    required this.onPressed,
+    this.backgroundColor,
+    this.colorTitle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +29,17 @@ class CustomButton extends StatelessWidget {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
-              backgroundColor: Colors.red,
+              backgroundColor: backgroundColor ?? ColorsRepository.goldenPoppy,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
             ),
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text(
               title,
-              style: medium,
+              style: medium.copyWith(
+                color: colorTitle ?? ColorsRepository.realBlue,
+              ),
             ),
           ),
         ),
