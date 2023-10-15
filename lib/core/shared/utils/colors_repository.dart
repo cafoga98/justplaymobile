@@ -10,5 +10,4 @@ class ColorsRepository {
   static const platinum = Color(0xFFE5E5E5);
   static const coralRed = Color(0xFFFF4136);
   static const limeGreen = Color(0xFF2ECC40);
-  static const white = Color(0xFFFFFFFF);
 }
