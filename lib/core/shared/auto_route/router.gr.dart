@@ -15,13 +15,53 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    SportRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SportPage(),
+      );
+    },
+    CitiesRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CitiesPage(),
+      );
+    },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const LoginPage(),
       );
-    }
+    },
   };
+}
+
+/// generated route for
+/// [SportPage]
+class SportRoute extends PageRouteInfo<void> {
+  const SportRoute({List<PageRouteInfo>? children})
+      : super(
+          SportRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SportRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CitiesPage]
+class CitiesRoute extends PageRouteInfo<void> {
+  const CitiesRoute({List<PageRouteInfo>? children})
+      : super(
+          CitiesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CitiesRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
