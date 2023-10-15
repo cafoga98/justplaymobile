@@ -9,6 +9,16 @@ import '/core/shared/utils/colors_repository.dart';
 import '/core/presentation/widgets/custom_button.dart';
 import '/features/cities/domain/bloc/cities_bloc/cities_bloc.dart';
 
+/// FormCities Class
+///
+/// Represents a form for selecting and inputting location information, including
+/// country, state, and city. This form allows users to specify their location.
+///
+/// Example usage:
+///
+/// ```dart
+/// final form = FormCities();
+/// ```
 class FormCities extends StatefulWidget {
   const FormCities({Key? key}) : super(key: key);
 

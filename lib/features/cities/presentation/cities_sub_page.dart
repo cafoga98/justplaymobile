@@ -19,46 +19,48 @@ class CitiesSubPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorsRepository.limeGreen,
       body: BlocListener<CitiesBloc, CitiesState>(
-        listener: (context, state) => state.maybeWhen(
-            orElse: () {
-              return null;
-            },
-            isEmpty: (){
-              context.router.popForced();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(S.current.validateCity),
-                ),
+        listener: (context, state) => state.maybeWhen(orElse: () {
+          return null;
+        }, isEmpty: () {
+          /// if the CitiesState is isEmpty, the BlocListener will pop the current page and show a snackbar
+          /// to the user.
+          context.router.popForced();
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(S.current.validateCity),
+            ),
+          );
+          return null;
+        }, error: (e) {
+          ///If the CitiesState is error, the BlocListener will pop the current page and show
+          /// a snackbar to the user with the error message.
+          context.router.popForced();
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(e.message ?? S.current.noData),
+            ),
+          );
+          return null;
+        }, loading: () {
+          ///If the CitiesState is loading, the BlocListener will show a loading dialog to the user.
+          showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder: (context) {
+              return WillPopScope(
+                onWillPop: () => Future.value(false),
+                child: const LoadingPage(),
               );
-              return null;
             },
-            error: (e) {
-              context.router.popForced();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(e.message ?? S.current.noData),
-                ),
-              );
-              return null;
-            },
-            loading: () {
-              showDialog(
-                barrierDismissible: false,
-                context: context,
-                builder: (context) {
-                  return WillPopScope(
-                    onWillPop: () => Future.value(false),
-                    child: const LoadingPage(),
-                  );
-                },
-              );
-              return null;
-            },
-            done: (city) {
-              context.router.popForced();
-              context.router.push(SportRoute(city: city));
-              return null;
-            }),
+          );
+          return null;
+        }, done: (city) {
+          ///if the CitiesState is done, the BlocListener will pop the current page and push a
+          /// new page to the navigation stack.
+          context.router.popForced();
+          context.router.push(SportRoute(city: city));
+          return null;
+        }),
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
