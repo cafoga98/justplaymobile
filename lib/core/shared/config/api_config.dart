@@ -6,15 +6,36 @@ import '/generated/l10n.dart';
 import '/core/shared/error_handle/exceptions.dart';
 import '/core/shared/config/connectivity_checker.dart';
 
+/// ApiConfig Class
+///
+/// Manages the configuration and handling of API requests. It includes methods
+/// for making GET and POST requests, handling network connectivity, and managing
+/// response data.
+///
+/// Example usage:
+///
+/// ```dart
+/// final apiConfig = ApiConfig(
+///   connectivityChecker: ConnectivityChecker(),
+///   client: Client(),
+/// );
+///
+/// final data = await apiConfig.apiGet('https://api.example.com/data');
+/// ```
 class ApiConfig {
   final ConnectivityChecker connectivityChecker;
   final Client client;
 
+  /// Creates an [ApiConfig] with the provided [connectivityChecker] and [client].
   ApiConfig({
     required this.connectivityChecker,
     required this.client,
   });
 
+  /// Makes a GET request to the specified [uri] with optional [headers].
+  ///
+  /// Throws exceptions for various scenarios, such as no internet connection,
+  /// timeout, and different response status codes.
   Future<dynamic> apiGet(
       String uri, {
         Map<String, String>? headers,
@@ -38,6 +59,10 @@ class ApiConfig {
     }
   }
 
+  /// Makes a POST request to the specified [uri] with optional [body] and [headers].
+  ///
+  /// Throws exceptions for various scenarios, such as no internet connection,
+  /// timeout, and different response status codes.
   Future<dynamic> apiPost(
     String uri, {
     Object? body,
@@ -67,6 +92,9 @@ class ApiConfig {
     }
   }
 
+  /// Handles the response from the API by checking the status code.
+  ///
+  /// Throws specific exceptions based on the response status code.
   _responseManager(Response response) {
     switch (response.statusCode) {
       case 200:

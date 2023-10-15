@@ -5,9 +5,22 @@ import '/generated/l10n.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/core/shared/utils/style_repository.dart';
 
+/// Loading Page Widget
+///
+/// A customizable loading screen to overlay on any view while a process is
+/// being executed. It displays a loading indicator and an optional message.
+///
+/// Example usage:
+///
+/// ```dart
+/// LoadingPage(
+///   message: 'Loading data...',
+/// )
+/// ```
 class LoadingPage extends StatelessWidget {
   final String? message;
 
+  /// Creates a [LoadingPage] with an optional [message].
   const LoadingPage({
     Key? key,
     this.message,

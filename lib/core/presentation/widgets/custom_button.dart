@@ -4,12 +4,31 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '/core/shared/utils/style_repository.dart';
 import '/core/shared/utils/colors_repository.dart';
 
+/// Custom Button Widget
+///
+/// A customizable button widget with title, background color,
+/// and text color properties.
+///
+/// Example usage:
+///
+/// ```dart
+/// CustomButton(
+///   title: 'Click Me',
+///   onPressed: () {
+///     // Your action here
+///   },
+///   backgroundColor: Colors.blue,
+///   colorTitle: Colors.white,
+/// )
+/// ```
 class CustomButton extends StatelessWidget {
   final String title;
   final Color? backgroundColor;
   final Color? colorTitle;
   final VoidCallback? onPressed;
 
+  /// Creates a [CustomButton] with the specified [title], [onPressed],
+  /// [backgroundColor], and [colorTitle].
   const CustomButton({
     Key? key,
     required this.title,

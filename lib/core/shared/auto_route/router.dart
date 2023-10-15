@@ -6,6 +6,16 @@ import '/features/sports/domain/entities/avaliable_sport.dart';
 
 part 'router.gr.dart';
 
+/// AppRouter
+///
+/// Manages the routing configuration for the Flutter application using the
+/// `auto_route` package. It defines the routes and their initial configuration.
+///
+/// Example usage:
+///
+/// ```dart
+/// final appRouter = AppRouter();
+/// ```
 @AutoRouterConfig(
   replaceInRouteName: 'Page,Route',
 )

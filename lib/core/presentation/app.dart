@@ -14,11 +14,26 @@ import '/features/login/data/services/implementation/login_service.dart';
 import '/core/data/repository/implementation/local_storage_repository.dart';
 import '/features/login/data/repositories/implementation/login_repository.dart';
 
+/// MyApp Widget
+///
+/// The main entry point for the Flutter application. It sets up
+/// the application's configuration, theme, routing, and providers.
+///
+/// Example usage:
+///
+/// ```dart
+/// MyApp(
+///   getIt: GetIt.instance,
+///   apiConfig: ApiConfig(),
+///   environmentConfig: EnvironmentConfig(),
+/// )
+/// ```
 class MyApp extends StatefulWidget {
   final GetIt getIt;
   final ApiConfig apiConfig;
   final EnvironmentConfig environmentConfig;
 
+  /// Creates a [MyApp] with the provided [getIt], [apiConfig], and [environmentConfig].
   const MyApp({
     Key? key,
     required this.getIt,
@@ -33,7 +48,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
+    /// Initialize ScreenUtil for responsive design
     ScreenUtil.init(context);
+
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       splitScreenMode: true,
@@ -113,5 +130,3 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     super.dispose();
   }
 }
-
-///Nos queda faltando organizar el mainCommond para inyectar las dependencias en MyApp
