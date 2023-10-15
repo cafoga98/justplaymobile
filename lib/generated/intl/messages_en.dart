@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "amenities": MessageLookupByLibrary.simpleMessage("Amenities"),
         "chooseGame": MessageLookupByLibrary.simpleMessage(
             "Choose a pick-up game to play in"),
+        "city": MessageLookupByLibrary.simpleMessage("City"),
         "completeField": MessageLookupByLibrary.simpleMessage(
             "Please fill in the current address fields before adding a new one"),
         "deleteNoAllow":
@@ -63,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Problems connecting to internal database, please try again later"),
         "unauthorised": MessageLookupByLibrary.simpleMessage(
             "No authorization for application"),
+        "validateCity":
+            MessageLookupByLibrary.simpleMessage("Please choose a valid city"),
         "whosPlaying": MessageLookupByLibrary.simpleMessage("Who\\\'s Playing"),
         "wrongCredentials":
             MessageLookupByLibrary.simpleMessage("Incorrect credentials"),

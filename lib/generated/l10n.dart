@@ -349,6 +349,26 @@ class S {
       args: [],
     );
   }
+
+  /// `City`
+  String get city {
+    return Intl.message(
+      'City',
+      name: 'city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please choose a valid city`
+  String get validateCity {
+    return Intl.message(
+      'Please choose a valid city',
+      name: 'validateCity',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

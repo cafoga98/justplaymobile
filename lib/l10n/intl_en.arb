@@ -28,5 +28,7 @@
   "whosPlaying": "Who\\'s Playing",
   "recommendation": "Recommendations",
   "loadingLogin": "Iniciando sesión, por favor espere un momento ...",
-  "wrongCredentials": "Incorrect credentials"
+  "wrongCredentials": "Incorrect credentials",
+  "city": "City",
+  "validateCity": "Please choose a valid city"
 }
