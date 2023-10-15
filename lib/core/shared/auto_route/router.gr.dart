@@ -15,6 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    DetailRoute.name: (routeData) {
+      final args = routeData.argsAs<DetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: DetailPage(
+          key: args.key,
+          avaliableSport: args.avaliableSport,
+        ),
+      );
+    },
     SportRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -34,6 +44,43 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [DetailPage]
+class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
+  DetailRoute({
+    Key? key,
+    required AvaliableSport avaliableSport,
+    List<PageRouteInfo>? children,
+  }) : super(
+          DetailRoute.name,
+          args: DetailRouteArgs(
+            key: key,
+            avaliableSport: avaliableSport,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'DetailRoute';
+
+  static const PageInfo<DetailRouteArgs> page = PageInfo<DetailRouteArgs>(name);
+}
+
+class DetailRouteArgs {
+  const DetailRouteArgs({
+    this.key,
+    required this.avaliableSport,
+  });
+
+  final Key? key;
+
+  final AvaliableSport avaliableSport;
+
+  @override
+  String toString() {
+    return 'DetailRouteArgs{key: $key, avaliableSport: $avaliableSport}';
+  }
 }
 
 /// generated route for

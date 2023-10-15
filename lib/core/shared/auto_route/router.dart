@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 
 import '/core/shared/auto_route/pages.dart';
+import '/features/sports/domain/entities/avaliable_sport.dart';
 
 part 'router.gr.dart';
 
@@ -17,5 +19,6 @@ class AppRouter extends _$AppRouter {
     AutoRoute(page: LoginRoute.page, path: '/', initial: true),
     AutoRoute(page: CitiesRoute.page, path: '/cities', initial: false),
     AutoRoute(page: SportRoute.page, path: '/sports', initial: false),
+    AutoRoute(page: DetailRoute.page, path: '/detail', initial: false),
   ];
 }
