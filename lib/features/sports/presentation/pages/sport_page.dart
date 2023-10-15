@@ -13,13 +13,22 @@ import '/features/sports/presentation/widgets/days_section.dart';
 
 @RoutePage()
 class SportPage extends StatelessWidget {
-  const SportPage({Key? key}) : super(key: key);
+  final String city;
+
+  const SportPage({
+    Key? key,
+    required this.city,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsRepository.realBlue,
       appBar: AppBar(
+        title: Text(
+          '$city ${S.current.city}',
+          style: medium,
+        ),
         actions: [
           IconButton(
             onPressed: () {
