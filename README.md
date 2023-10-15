@@ -121,6 +121,61 @@ There were 2 consumptions of services:
 
      * Tomorrow (Array of objects): Similar to "Today," but contains information about games available for tomorrow.
 
+    **Response Example**
+    ```json
+    {
+      "Today": [
+        {
+          "genrGame":"cycling",
+          "time": "6:20 p. m.",
+          "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "carousel": [
+            "https://picsum.photos/500",
+            "https://picsum.photos/500",
+            "https://picsum.photos/500"
+          ],
+          "host": {
+            "name": "Michael Scott",
+            "profileImage": "https://picsum.photos/250?image=10"
+          },
+          "eventTitle": "Huntington Beach Sport Complex",
+          "address": "Cll 34 #42-43",
+          "duration": "60 min",
+          "price": "4.99",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
+          "amenities": ["parking", "wifi", "food store", "Hydration"],
+          "players": [
+            {
+              "name": "Pepito Perez Gomez",
+              "profileImage": "base64_random"
+            },
+            {
+              "name": "John Smith",
+              "profileImage": "https://picsum.photos/250?image=20"
+            },
+            {
+              "name": "Emily Johnson",
+              "profileImage": "https://picsum.photos/250?image=30"
+            },
+            {
+              "name": "Michael Brown",
+              "profileImage": "https://picsum.photos/250?image=40"
+            }
+          ],
+          "maxPlayers": "4/10",
+          "recommendations": [
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+          ]
+        }
+      ],
+      "Tomorrow": [
+        {
+          // ... (estructura similar a "Today")
+        }
+      ]
+    }
+
 
 2. `/loginFake`
    * Method: Post
@@ -138,4 +193,4 @@ There were 2 consumptions of services:
     {
     "userName": "camilo",
     "password": "camilo"
-    }```
+    }
