@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/generated/l10n.dart';
+import '/core/shared/auto_route/router.dart';
 import '/core/shared/utils/style_repository.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/features/sports/domain/entities/avaliable_sport.dart';
@@ -18,7 +20,9 @@ class SportItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        context.router.push(DetailRoute(avaliableSport: avaliableSport));
+      },
       child: Padding(
         padding: EdgeInsets.only(
           bottom: 20.h,
