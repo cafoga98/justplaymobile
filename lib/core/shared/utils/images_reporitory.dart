@@ -7,8 +7,8 @@ class ImageRepository {
   static const humansBicycle = 'assets/img/humans-bicycle.png';
   static const humansBasketball2 = 'assets/img/humans-basketball2.png';
   static const humansBasketball = 'assets/img/humans-basketball.png';
-  static const humansScooter = 'assets/img/humans-scooter.png';
-  static const headerCity = 'assets/img/header-city.png';
+  static const humansScooter = 'assets/img/human_scooter.png';
+  static const headerCity = 'assets/img/header_city.png';
   static const gmailIcon = 'assets/img/gmail_icon.png';
   static const facebookIcon = 'assets/img/facebook_icon.png';
   static const emailIcon = 'assets/img/email_icon.png';
