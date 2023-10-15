@@ -3,7 +3,8 @@
 Welcome to our mobile application that brings you closer to your favorite sports teams and events!
 With this app, you can easily explore and join sports-related activities of your interest.
 
-![amenities_hydration.png](amenities_hydration.png)
+## Getting Started
+- Before you start developing with JustPlayMobile, ensure you have the following prerequisites:
 
 ## Dependencies
 
@@ -14,11 +15,9 @@ With this app, you can easily explore and join sports-related activities of your
 
 1. Install Dart and Flutter.
 2. Clone this [repository](https://github.com/cafoga98/justplaymobile.git) .
-3. Run `flutter run` to build and run the app.
-
-## Getting Started
-
-samples, guidance on mobile development, and a full API reference.
+3. Run `flutter pub get` to get the dependencies of this project.
+4. Run `flutter pub run build_runner build --delete-conflicting-outputs` to generate code derived from annotations and generated sources that depend on `build_runner`.
+5. Run `flutter run` to build and run the app.
 
 ## Usage
 Welcome to our mobile application that brings you closer to your favorite sports teams and events! With this app, you can easily explore and join sports-related activities of your interest. We've divided the application into four main views to make your experience smooth and enjoyable:
@@ -45,5 +44,5 @@ With these four main views, you can effortlessly navigate through the app and ma
 * [Cesar Forero](https://github.com/cafoga98)
 
 ## Documentation
-
+* [Prototype design](https://github.com/cafoga98/justplaymobile/blob/main/documentation/WireGen%20-%20AI%20GPT%20wireframe%20generation%20(Community).pdf)
 * [Documentation](https://github.com/cafoga98/justplaymobile/blob/main/README.md)
