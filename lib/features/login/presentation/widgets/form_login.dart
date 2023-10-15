@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/generated/l10n.dart';
+import '/core/shared/auto_route/router.dart';
 import '/core/shared/utils/style_repository.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/core/presentation/widgets/custom_button.dart';
@@ -35,7 +37,8 @@ class _FormLoginState extends State<FormLogin> {
             TextFormField(
               keyboardType: TextInputType.name,
               style: medium.copyWith(color: ColorsRepository.realBlue),
-              decoration: inputTextFormField.copyWith(hintText: S.current.email),
+              decoration:
+                  inputTextFormField.copyWith(hintText: S.current.email),
               onSaved: (data) {},
               onChanged: (data) {},
             ),
@@ -45,7 +48,8 @@ class _FormLoginState extends State<FormLogin> {
             TextFormField(
               keyboardType: TextInputType.name,
               style: medium.copyWith(color: ColorsRepository.realBlue),
-              decoration: inputTextFormField.copyWith(hintText: S.current.password),
+              decoration:
+                  inputTextFormField.copyWith(hintText: S.current.password),
               onSaved: (data) {},
               onChanged: (data) {},
             ),
@@ -64,7 +68,12 @@ class _FormLoginState extends State<FormLogin> {
                 ],
               ),
             ),
-            CustomButton(title: S.current.login)
+            CustomButton(
+              title: S.current.login,
+              onPressed: () {
+                context.router.push(const CitiesRoute());
+              },
+            )
           ],
         ),
       ),
