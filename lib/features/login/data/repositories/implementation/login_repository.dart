@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:justplaymobile/generated/l10n.dart';
 
+import '/generated/l10n.dart';
 import '/core/shared/error_handle/failure.dart';
 import '/core/shared/error_handle/exceptions.dart';
 import '/features/login/data/services/implementation/login_service.dart';
