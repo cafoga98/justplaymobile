@@ -23,12 +23,14 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "address": MessageLookupByLibrary.simpleMessage("Address"),
+        "amenities": MessageLookupByLibrary.simpleMessage("Amenities"),
         "chooseGame": MessageLookupByLibrary.simpleMessage(
             "Choose a pick-up game to play in"),
         "completeField": MessageLookupByLibrary.simpleMessage(
             "Please fill in the current address fields before adding a new one"),
         "deleteNoAllow":
             MessageLookupByLibrary.simpleMessage("Cannot delete this field"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password ?"),
@@ -46,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noSaveLocalData": MessageLookupByLibrary.simpleMessage(
             "Failed to save the information, please try again later"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "recommendation":
+            MessageLookupByLibrary.simpleMessage("Recommendations"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "singUp": MessageLookupByLibrary.simpleMessage("Sing Up With"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
@@ -57,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Problems connecting to internal database, please try again later"),
         "unauthorised": MessageLookupByLibrary.simpleMessage(
             "No authorization for application"),
+        "whosPlaying": MessageLookupByLibrary.simpleMessage("Who\\\'s Playing"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Your location")
       };
 }

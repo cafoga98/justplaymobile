@@ -22,5 +22,9 @@
   "yourLocation": "Your location",
   "start": "Start",
   "chooseGame": "Choose a pick-up game to play in",
-  "noGames": "There are no games created for this day"
+  "noGames": "There are no games created for this day",
+  "amenities": "Amenities",
+  "description": "Description",
+  "whosPlaying": "Who\\'s Playing",
+  "recommendation": "Recommendations"
 }
