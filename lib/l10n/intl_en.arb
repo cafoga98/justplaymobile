@@ -18,5 +18,9 @@
   "forgotPassword": "Forgot Password ?",
   "login": "Login",
   "email": "Email",
-  "password": "Password"
+  "password": "Password",
+  "yourLocation": "Your location",
+  "start": "Start",
+  "chooseGame": "Choose a pick-up game to play in",
+  "noGames": "There are no games created for this day"
 }

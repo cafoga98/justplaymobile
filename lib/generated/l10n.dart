@@ -249,6 +249,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Your location`
+  String get yourLocation {
+    return Intl.message(
+      'Your location',
+      name: 'yourLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start`
+  String get start {
+    return Intl.message(
+      'Start',
+      name: 'start',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a pick-up game to play in`
+  String get chooseGame {
+    return Intl.message(
+      'Choose a pick-up game to play in',
+      name: 'chooseGame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no games created for this day`
+  String get noGames {
+    return Intl.message(
+      'There are no games created for this day',
+      name: 'noGames',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

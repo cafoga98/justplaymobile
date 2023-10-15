@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "address": MessageLookupByLibrary.simpleMessage("Address"),
+        "chooseGame": MessageLookupByLibrary.simpleMessage(
+            "Choose a pick-up game to play in"),
         "completeField": MessageLookupByLibrary.simpleMessage(
             "Please fill in the current address fields before adding a new one"),
         "deleteNoAllow":
@@ -38,12 +40,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "noConnection":
             MessageLookupByLibrary.simpleMessage("No Internet conection"),
         "noData": MessageLookupByLibrary.simpleMessage("No Data"),
+        "noGames": MessageLookupByLibrary.simpleMessage(
+            "There are no games created for this day"),
         "noLaunch": MessageLookupByLibrary.simpleMessage("Could not launch"),
         "noSaveLocalData": MessageLookupByLibrary.simpleMessage(
             "Failed to save the information, please try again later"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "singUp": MessageLookupByLibrary.simpleMessage("Sing Up With"),
+        "start": MessageLookupByLibrary.simpleMessage("Start"),
         "successfulRegistration":
             MessageLookupByLibrary.simpleMessage("Successful registration"),
         "timeOut": MessageLookupByLibrary.simpleMessage(
@@ -51,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "timeOutLocal": MessageLookupByLibrary.simpleMessage(
             "Problems connecting to internal database, please try again later"),
         "unauthorised": MessageLookupByLibrary.simpleMessage(
-            "No authorization for application")
+            "No authorization for application"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Your location")
       };
 }
