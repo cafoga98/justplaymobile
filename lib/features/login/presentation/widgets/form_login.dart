@@ -43,7 +43,7 @@ class _FormLoginState extends State<FormLogin> {
               decoration:
                   inputTextFormField.copyWith(hintText: S.current.email),
               validator: (data) {
-                if (data == null || data!.isEmpty) {
+                if (data == null || data.isEmpty) {
                   return S.current.mandatoryField;
                 }
                 return null;
@@ -65,7 +65,7 @@ class _FormLoginState extends State<FormLogin> {
                 password = data;
               },
               validator: (data) {
-                if (data == null || data!.isEmpty) {
+                if (data == null || data.isEmpty) {
                   return S.current.mandatoryField;
                 }
                 return null;

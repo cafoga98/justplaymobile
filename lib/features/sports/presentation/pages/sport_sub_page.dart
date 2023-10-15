@@ -99,10 +99,10 @@ class SportSubPage extends StatelessWidget {
                           child: ListView.builder(
                             shrinkWrap: true,
                             primary: true,
-                            itemCount: avaliableSports!.length,
+                            itemCount: avaliableSports.length,
                             itemBuilder: (BuildContext context, int index) {
                               return DaysSection(
-                                avaliableDays: avaliableSports![index],
+                                avaliableDays: avaliableSports[index],
                               );
                             },
                           ),

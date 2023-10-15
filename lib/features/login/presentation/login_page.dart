@@ -37,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                   content: Text(e.message ?? S.current.noData),
                 ),
               );
+              return null;
             },
             loading: () {
               showDialog(

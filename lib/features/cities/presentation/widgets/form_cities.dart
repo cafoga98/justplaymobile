@@ -1,11 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:country_state_city_picker/country_state_city_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/generated/l10n.dart';
-import '/core/shared/auto_route/router.dart';
 import '/core/shared/utils/style_repository.dart';
 import '/core/shared/utils/colors_repository.dart';
 import '/core/presentation/widgets/custom_button.dart';
