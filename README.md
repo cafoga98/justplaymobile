@@ -3,7 +3,7 @@
 Welcome to our mobile application that brings you closer to your favorite sports teams and events!
 With this app, you can easily explore and join sports-related activities of your interest.
 
-![img.png](img.png)
+![amenities_hydration.png](amenities_hydration.png)
 
 ## Dependencies
 
